@@ -18,14 +18,21 @@
       "node_modules/@types"
     ],
     "baseUrl": "./",
-    "rootDir": "./src/",
+    "rootDirs": ["./src/", "./example/"],
     "outDir": "./dist/",
+    "paths": {
+      "discord-interaction-router": ["./src/index"]
+    }
   },
   "files": [
     "src/index.ts"
   ],
+  "ts-node": {
+    "esm": true
+  },
   "exclude": [
     "node_modules",
-    "dist"
+    "dist",
+    "example"
   ]
 }

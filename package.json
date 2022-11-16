@@ -1,5 +1,6 @@
 {
   "name": "discord-interaction-router",
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "https://github.com/Themis3000/discord-interaction-router.git"
@@ -13,7 +14,7 @@
   ],
   "scripts": {
     "build": "tsc --module CommonJS --outDir dist/cis && tsc --outDir dist/esm",
-    "startExample": "ts-node ./example/index.ts"
+    "startExample": "node -r tsconfig-paths/register --experimental-specifier-resolution=node --loader ts-node/esm ./example/index.ts"
   },
   "keywords": [
     "Discord",
@@ -30,6 +31,7 @@
   },
   "devDependencies": {
     "ts-node": "^10.9.1",
+    "tsconfig-paths": "^4.1.0",
     "typescript": "^4.9.3"
   }
 }
