@@ -3,7 +3,7 @@ import {Client, CommandInteraction, MessageActionRow, MessageButton} from "disco
 
 const createAskButtonCommand: Command = {
   commandData: {
-    name: "createAskButton",
+    name: "createaskbutton",
     description: "Creates the ask button",
     type: "CHAT_INPUT"
   },

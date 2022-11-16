@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
-    "module": "es2015",
+    "module": "commonjs",
     "noImplicitReturns": true,
     "noUnusedLocals": true,
     "sourceMap": true,
@@ -27,9 +27,6 @@
   "files": [
     "src/index.ts"
   ],
-  "ts-node": {
-    "esm": true
-  },
   "exclude": [
     "node_modules",
     "dist",
