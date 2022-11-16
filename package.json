@@ -12,7 +12,8 @@
     "dist"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "startExample": "ts-node ./example/index.ts"
   },
   "keywords": [
     "Discord",
