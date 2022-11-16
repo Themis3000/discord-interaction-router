@@ -2,7 +2,7 @@
   "name": "discord-interaction-router",
   "repository": {
     "type": "git",
-    "url": "https://github.com/themis3000/discord-interaction-router"
+    "url": "https://github.com/Themis3000/discord-interaction-router.git"
   },
   "version": "0.0.1",
   "description": "A library that gives you the tools to more easily create handle discord.js interactions",
