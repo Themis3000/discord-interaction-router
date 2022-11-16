@@ -62,7 +62,7 @@ const askFlow: interactionStepRoute.InteractionSteps = {
               .setStyle("SECONDARY")
           );
 
-        await context.interaction.reply({content: "Are you team turkeys or team rabbits?", components: [row]});
+        await context.interaction.reply({content: "Are you team donkeys or team turkeys?", components: [row]});
         return {success: true};
       },
       async (context: interactionStepRoute.StepContext): Promise<interactionStepRoute.StepResult> => {
@@ -89,11 +89,11 @@ const askFlow: interactionStepRoute.InteractionSteps = {
         const row = new MessageActionRow()
           .addComponents(
             new MessageButton()
-              .setCustomId(context.nextId)
+              .setCustomId(context.getNextIdWithOption(1))
               .setLabel("Yep")
               .setStyle("PRIMARY"),
             new MessageButton()
-              .setCustomId(context.nextId)
+              .setCustomId(context.getNextIdWithOption(2))
               .setLabel("uh-huh")
               .setStyle("SECONDARY")
           );
