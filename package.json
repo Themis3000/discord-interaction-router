@@ -12,7 +12,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsc",
+    "build": "tsc --module CommonJS --outDir dist/cis && tsc --outDir dist/esm",
     "startExample": "ts-node ./example/index.ts"
   },
   "keywords": [
