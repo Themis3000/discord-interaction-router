@@ -1,5 +1,5 @@
 import { RouteStorage } from "../routeStorage";
-import * as NodeCache from "node-cache";
+import NodeCache from "node-cache";
 import { Route } from "../route";
 
 export class ExpiringRouteStore extends RouteStorage {
