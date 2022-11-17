@@ -115,3 +115,5 @@ await redisInteractionRouter.addRoute(route, {interaction, client});
 ```
 
 And you're all done! If you followed along this should be your end product:
+
+![example video](https://i.imgur.com/4zRneyQ.gif)
