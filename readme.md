@@ -7,6 +7,8 @@ This library aims to serve 2 purposes:
 1. Easy stateful interaction groups. This useful for when you want to chain more than one interaction together and persist data between them.
 2. Easy static interaction routing.
 
+This library may have a bit of a learning curve in the beginning, but aims to lower development time in the long term.
+
 ### The example bot
 
 There is a complete discord bot project example under the `example` directory. If you'd like to run the bot on your system for test/demo purposes simply clone this repository, run `npm i`, set the environment var `TOKEN` to your discord bot's token with `export TOKEN=my-token`, then run it with `npm run startExample`. This example shows every feature this package has to offer in use with comments detailing what things do.
