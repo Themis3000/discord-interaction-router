@@ -10,8 +10,6 @@ const token = process.env.TOKEN;
 const bot = new Client({
   partials: ["CHANNEL"],
   intents: [
-    Intents.FLAGS.GUILDS,
-    Intents.FLAGS.GUILD_MEMBERS,
     Intents.FLAGS.DIRECT_MESSAGES
   ]
 })
