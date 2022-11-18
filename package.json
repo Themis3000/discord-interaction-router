@@ -23,7 +23,7 @@
   "license": "ISC",
   "dependencies": {
     "@types/uuid": "^8.3.4",
-    "discord.js": "https://github.com/discordjs/discord.js.git#v13",
+    "discord.js": "^14.6.0",
     "node-cache": "^5.1.2",
     "redis": "^4.5.0",
     "uuid": "^9.0.0"

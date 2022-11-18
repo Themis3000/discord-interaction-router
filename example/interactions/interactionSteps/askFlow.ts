@@ -1,5 +1,5 @@
 import {interactionStepRoute} from "discord-interaction-router";
-import {ButtonInteraction, Message, MessageActionRow, MessageButton} from "discord.js";
+import {ButtonInteraction, Message, ActionRowBuilder, ButtonBuilder, ButtonStyle} from "discord.js";
 
 const askFlow: interactionStepRoute.InteractionSteps = {
   // Define step branches. When an interaction step route is invoked it'll always start on the default branch.
@@ -14,13 +14,13 @@ const askFlow: interactionStepRoute.InteractionSteps = {
         if (!context.interaction.user.dmChannel)
           await context.interaction.user.createDM();
 
-        const row = new MessageActionRow()
+        const row = new ActionRowBuilder<ButtonBuilder>()
           .addComponents(
-            new MessageButton()
+            new ButtonBuilder()
               // The id to advance to the next step is provided for you. No need to think about what the id is to pass it to the next thing.
               .setCustomId(context.nextId)
               .setLabel("Use discord name")
-              .setStyle("PRIMARY")
+              .setStyle(ButtonStyle.Primary)
           );
 
         // Send dm and notification message
@@ -49,17 +49,17 @@ const askFlow: interactionStepRoute.InteractionSteps = {
           return {success: false};
         }
 
-        const row = new MessageActionRow()
+        const row = new ActionRowBuilder<ButtonBuilder>()
           .addComponents(
-            new MessageButton()
+            new ButtonBuilder()
               // Gets a custom id with an option number. This allows you to tell which button was pressed
               .setCustomId(context.getNextIdWithOption(1))
               .setLabel("Donkeys")
-              .setStyle("PRIMARY"),
-            new MessageButton()
+              .setStyle(ButtonStyle.Primary),
+            new ButtonBuilder()
               .setCustomId(context.getNextIdWithOption(2))
               .setLabel("Turkeys")
-              .setStyle("SECONDARY")
+              .setStyle(ButtonStyle.Primary)
           );
 
         await context.interaction.reply({content: "Are you team donkeys or team turkeys?", components: [row]});
@@ -86,16 +86,16 @@ const askFlow: interactionStepRoute.InteractionSteps = {
         if (!(context.interaction instanceof ButtonInteraction))
           return {success: false};
 
-        const row = new MessageActionRow()
+        const row = new ActionRowBuilder<ButtonBuilder>()
           .addComponents(
-            new MessageButton()
+            new ButtonBuilder()
               .setCustomId(context.getNextIdWithOption(1))
               .setLabel("Yep")
-              .setStyle("PRIMARY"),
-            new MessageButton()
+              .setStyle(ButtonStyle.Primary),
+            new ButtonBuilder()
               .setCustomId(context.getNextIdWithOption(2))
               .setLabel("uh-huh")
-              .setStyle("SECONDARY")
+              .setStyle(ButtonStyle.Secondary)
           );
 
         await context.interaction.reply({content: "so you chose donkeys, huh?", components: [row]});

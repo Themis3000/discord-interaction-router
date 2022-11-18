@@ -1,16 +1,16 @@
-import { Client, Intents } from "discord.js";
+import {Client, GatewayIntentBits, Partials} from "discord.js";
 import registerReadyListener from './listeners/ready';
 import registerMessageListener from './listeners/messageCreate';
 import registerInteractionListener from './listeners/interactionCreate';
 import registerRoutes from "./registerRoutes";
-import { redisInteractionRouter } from "./routers";
+import {redisInteractionRouter} from "./routers";
 
 const token = process.env.TOKEN;
 
 const bot = new Client({
-  partials: ["CHANNEL"],
+  partials: [Partials.Channel],
   intents: [
-    Intents.FLAGS.DIRECT_MESSAGES
+    GatewayIntentBits.DirectMessages
   ]
 })
 

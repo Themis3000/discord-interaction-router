@@ -1,6 +1,6 @@
 # Discord interaction router
 
-⚠⚠⚠ This library is currently not intended for use yet. Please check back later. Currently only tested for discord.js v13, will be updated soon. ⚠⚠⚠
+⚠⚠⚠ This library is currently not intended for use yet. Please check back later. ⚠⚠⚠
 
 This library aims to serve 2 purposes:
 

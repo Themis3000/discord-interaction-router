@@ -1,19 +1,26 @@
 import {Command} from "discord-interaction-router";
-import {Client, CommandInteraction, MessageActionRow, MessageButton} from "discord.js";
+import {
+  Client,
+  CommandInteraction,
+  ApplicationCommandType,
+  ActionRowBuilder,
+  ButtonBuilder,
+  ButtonStyle
+} from "discord.js";
 
 const createAskButtonCommand: Command = {
   commandData: {
     name: "createaskbutton",
     description: "Creates the ask button",
-    type: "CHAT_INPUT"
+    type: ApplicationCommandType.ChatInput
   },
   run: async (client: Client, interaction: CommandInteraction) => {
-    const row = new MessageActionRow()
+    const row = new ActionRowBuilder<ButtonBuilder>()
       .addComponents(
-        new MessageButton()
+        new ButtonBuilder()
           .setCustomId("askButton")
           .setLabel("Ask")
-          .setStyle("PRIMARY")
+          .setStyle(ButtonStyle.Primary)
       )
     await interaction.reply({content: "Here's your ask button!", components: [row]})
   }

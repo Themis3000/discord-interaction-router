@@ -1,10 +1,10 @@
-import { Client, Message } from "discord.js";
+import { Client, Message, ChannelType } from "discord.js";
 import { redisInteractionRouter, staticInteractionRouter } from "../routers";
 
 export default (client: Client): void => {
   client.on("messageCreate", async (msg: Message<boolean>) => {
     // Tries routing dms to the redis interaction router and the static interaction router
-    if (msg.channel.type === "DM" && !msg.author.bot) {
+    if (msg.channel.type === ChannelType.DM && !msg.author.bot) {
       const usedRedisInteraction = await redisInteractionRouter.useMsgRoute(client, msg);
       if (usedRedisInteraction)
         return;
