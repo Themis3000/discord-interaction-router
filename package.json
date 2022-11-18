@@ -4,7 +4,7 @@
     "type": "git",
     "url": "https://github.com/Themis3000/discord-interaction-router.git"
   },
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A library that gives you the tools to more easily create handle discord.js interactions",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
