@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
-    "module": "commonjs",
+    "module": "es2015",
     "noImplicitReturns": true,
     "noUnusedLocals": true,
     "sourceMap": true,
@@ -14,9 +14,6 @@
     "resolveJsonModule": true,
     "forceConsistentCasingInFileNames": true,
     "removeComments": true,
-    "typeRoots": [
-      "node_modules/@types"
-    ],
     "baseUrl": "./",
     "rootDirs": ["./src/", "./example/"],
     "outDir": "./dist/",

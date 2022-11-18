@@ -4,7 +4,7 @@
     "type": "git",
     "url": "https://github.com/Themis3000/discord-interaction-router.git"
   },
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "A library that gives you the tools to more easily create handle discord.js interactions",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -12,7 +12,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsc --module CommonJS --outDir dist/cis && tsc --outDir dist/esm",
+    "build": "tsc --module CommonJS --outDir dist/cjs && tsc --outDir dist/esm",
     "startExample": "ts-node -r tsconfig-paths/register ./example/index.ts"
   },
   "keywords": [
