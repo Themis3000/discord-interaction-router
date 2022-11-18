@@ -40,9 +40,9 @@ const signupFlow: interactionStepRoute.InteractionSteps = {
   // Define a command handler. This is only needed if you intend for this flow to be invoked by a command.
   // Each one of these functions is a single step
   commandHandler: async (context: interactionStepRoute.CommandContext): Promise<interactionStepRoute.StepResult> => {
-    const row = new MessageActionRow()
+    const row = new ActionRowBuilder<SelectMenuBuilder>()
       .addComponents(
-        new MessageSelectMenu()
+        new SelectMenuBuilder()
           // The id for the next step is provided for you.
           .setCustomId(context.nextId)
           .setPlaceholder("Please select an option")
@@ -59,31 +59,31 @@ const signupFlow: interactionStepRoute.InteractionSteps = {
         // Narrow the incoming interaction type
         if (!(context.interaction instanceof SelectMenuInteraction))
           return {success: false};
-        
+
         // Read and store data from the last interaction
         // Data stored in context.data is persisted between steps (must be json serializable)
         context.data["optionChosen"] = context.interaction.values[0];
 
-        const row = new MessageActionRow()
+        const row = new ActionRowBuilder<ButtonBuilder>()
           .addComponents(
-            new MessageButton()
+            new ButtonBuilder()
               // Gets a custom id with an option number. This allows you to tell which button was pressed
               .setCustomId(context.getNextIdWithOption(1))
               .setLabel("Yes")
-              .setStyle("PRIMARY"),
-            new MessageButton()
+              .setStyle(ButtonStyle.Primary),
+            new ButtonBuilder()
               .setCustomId(context.getNextIdWithOption(2))
               .setLabel("No")
-              .setStyle("SECONDARY")
+              .setStyle(ButtonStyle.Secondary)
           );
-        
+
         await context.interaction.reply({content: `You have slected option ${context.data.optionChosen}, would you like to continue?`, components: [row]});
         return {success: true};
       },
       async (context: interactionStepRoute.StepContext): Promise<interactionStepRoute.StepResult> => {
         if (!(context.interaction instanceof ButtonInteraction))
           return {success: false};
-        
+
         // Check which button option was selected
         if (context.optionSelected === 1) {
           context.interaction.reply({content: "Recorded answer!"});
