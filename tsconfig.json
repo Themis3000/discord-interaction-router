@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "declaration": true,
     "allowSyntheticDefaultImports": true,
     "module": "es2015",
     "noImplicitReturns": true,
