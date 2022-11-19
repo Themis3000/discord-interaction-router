@@ -2,7 +2,7 @@
 
 ⚠⚠⚠ This library is still in early development. Although it's fully working in its current state, it's not considered complete yet. ⚠⚠⚠
 
-If you need help implementing this into your own project, be sure to check out the example project in `example`, or be free to open an issue or email `mail@themimegas.com` with questions. If you have any feature requests or have any other suggestions please do let me know. I'd like to aim towards perfecting this package and feedback is critical to that goal.
+If you need help implementing this into your own project, be sure to check out the example project in `example`, or be free to open an issue on GitHub or email `mail@themimegas.com` with questions. If you have any feature requests or have any other suggestions (especially if they have to do with simplification of features), please do let me know. I'd like to aim towards perfecting this package and feedback is critical towards that goal.
 
 This library aims to serve 2 purposes:
 
