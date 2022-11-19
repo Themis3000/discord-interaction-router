@@ -1,13 +1,13 @@
 # Discord interaction router
 
-⚠⚠⚠ This library is currently not intended for use yet. Please check back later. ⚠⚠⚠
+⚠⚠⚠ This library is still in early development. Although it's fully working in its current state, it's not considered complete yet. ⚠⚠⚠
+
+If you need help implementing this into your own project, be sure to check out the example project in `example`, or be free to open an issue or email `mail@themimegas.com` with questions. If you have any feature requests or have any other suggestions please do let me know. I'd like to aim towards perfecting this package and feedback is critical to that goal.
 
 This library aims to serve 2 purposes:
 
 1. Easy stateful interaction groups. This useful for when you want to chain more than one interaction together and persist data between them.
 2. Easy static interaction routing.
-
-This library may have a bit of a learning curve in the beginning, but aims to lower development time in the long term.
 
 ### The example bot
 
