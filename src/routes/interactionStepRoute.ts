@@ -7,7 +7,7 @@ import { Route } from "../route";
  * This is useful for when you need multiple inputs from a user.
  */
 export abstract class InteractionStepBase extends Route {
-  protected data: record<string, any> = {};
+  protected data: Record<string, any> = {};
   protected step = 0;
   protected stepsTotal = 0;
   protected branch = "default";
@@ -133,11 +133,11 @@ export interface InteractionSteps {
 
 abstract class BaseContext {
   public readonly client: Client;
-  public readonly data: record<string, any>;
+  public readonly data: Record<string, any>;
   public readonly nextId: string;
   public readonly interaction: unknown;
 
-  protected constructor(client: Client, data: record<string, any>, nextId: string) {
+  protected constructor(client: Client, data: Record<string, any>, nextId: string) {
     this.client = client;
     this.data = data;
     this.nextId = nextId;
@@ -161,7 +161,7 @@ export class StepContext extends BaseContext {
   public readonly interaction: MessageComponentInteraction | ModalSubmitInteraction | Message;
   public readonly optionSelected?: number
 
-  constructor(client: Client, interaction: MessageComponentInteraction | ModalSubmitInteraction | Message, data: record<string, any>, nextId: string, optionSelected?: number) {
+  constructor(client: Client, interaction: MessageComponentInteraction | ModalSubmitInteraction | Message, data: Record<string, any>, nextId: string, optionSelected?: number) {
     super(client, data, nextId);
     this.interaction = interaction;
     this.optionSelected = optionSelected;
@@ -171,7 +171,7 @@ export class StepContext extends BaseContext {
 export class CommandContext extends BaseContext {
   public readonly interaction: CommandInteraction;
 
-  constructor(client: Client, interaction: CommandInteraction, data: record<string, any>, nextId: string) {
+  constructor(client: Client, interaction: CommandInteraction, data: Record<string, any>, nextId: string) {
     super(client, data, nextId);
     this.interaction = interaction
   }
