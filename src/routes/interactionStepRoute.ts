@@ -86,6 +86,8 @@ export abstract class InteractionStepBase extends Route {
   }
 
   private async processStepResult(result: StepResult): Promise<{ destroy: boolean, runNext: boolean }> {
+    if (result.end)
+      return {destroy: true, runNext: false};
     if (result.setMsgChannel !== undefined) {
       this.clearMsgChannels();
       this.addMsgChannel(result.setMsgChannel);
@@ -183,7 +185,9 @@ export interface StepResult {
   /** If true, skips the rest of the current step and passes the interaction value to the next instead. */
   passToNext?: boolean,
   /** Sets the message channel the router is listening for messages from. */
-  setMsgChannel?: string
+  setMsgChannel?: string,
   /** Sets the current branch. */
-  setBranch?: string
+  setBranch?: string,
+  /** If true, terminates the route */
+  end?: boolean
 }
