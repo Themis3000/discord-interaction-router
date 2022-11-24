@@ -29,9 +29,5 @@
     "node_modules",
     "dist",
     "example"
-  ],
-  "ts-node": {
-    "esm": true,
-    "experimentalSpecifierResolution": "node"
-  }
+  ]
 }
